@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background1.jpg');
+            background-size: cover;
+            transition: background-image 1s ease-in-out;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .student-names {
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our School St mugaga primary school Nkozi</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#admission">Admission Forms</a>
+        <a href="#library">Library</a>
+    </nav>
+</header>
+
+<div class="form-container" id="admission">
+    <h2>Admission Form</h2>
+    <div class="student-names">
+        <p>Beyamba Deus</p>
+        <p>NAYIGA Annet</p>
+        <p>Mujuni Peter</p>
+        <p>Senyonga Arthur</p>
+        <p>Nalutaya Prossy</p>
+        <p>Katushabe Reachel</p>
+    </div>
+    <form id="studentForm">
+        <input type="text" placeholder="Student Name" required>
+        <input type="number" placeholder="Maths Marks" required>
+        <input type="number" placeholder="English Marks" required>
+        <input type="number" placeholder="Science Marks" required>
+        <input type="number" placeholder="SST Marks" required>
+        <input type="number" placeholder="IRE/Islam Marks" required>
+        <textarea placeholder="Teacher's Comment" rows="4"></textarea>
+        <button type="submit">Add Student</button>
+    </form>
+</div>
+
+<script>
+    const backgrounds = ['background1.jpg', 'background2.jpg', 'background3.jpg'];
+    let currentIndex = 0;
+
+    function changeBackground() {
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+        document.body.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+    }
+
+    setInterval(changeBackground, 4000);
+
+    document.getElementById('studentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Student added successfully!');
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
